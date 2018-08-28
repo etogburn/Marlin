@@ -890,6 +890,7 @@ void Temperature::manage_heater() {
 
 #define TEMP_AD595(RAW)  ((RAW) * 5.0 * 100.0 / 1024.0 / (OVERSAMPLENR) * (TEMP_SENSOR_AD595_GAIN) + TEMP_SENSOR_AD595_OFFSET)
 #define TEMP_AD8495(RAW) ((RAW) * 6.6 * 100.0 / 1024.0 / (OVERSAMPLENR) * (TEMP_SENSOR_AD8495_GAIN) + TEMP_SENSOR_AD8495_OFFSET)
+#define TEMP_AD595_BED(RAW)  ((RAW) * 5.0 * 100.0 / 1024.0 / (OVERSAMPLENR) * (TEMP_BED_SENSOR_AD595_GAIN) + TEMP_BED_SENSOR_AD595_OFFSET)
 
 /**
  * Bisect search for the range of the 'raw' value, then interpolate
@@ -990,7 +991,7 @@ float Temperature::analog2temp(const int raw, const uint8_t e) {
     #if ENABLED(HEATER_BED_USES_THERMISTOR)
       SCAN_THERMISTOR_TABLE(BEDTEMPTABLE, BEDTEMPTABLE_LEN);
     #elif ENABLED(HEATER_BED_USES_AD595)
-      return TEMP_AD595(raw);
+      return TEMP_AD595_BED(raw);
     #elif ENABLED(HEATER_BED_USES_AD8495)
       return TEMP_AD8495(raw);
     #else

@@ -147,3 +147,4 @@ CMakeListsPrivate.txt
 
 #CLion
 cmake-build-*
+/Marlin/Marlin.vcxproj.user
