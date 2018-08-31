@@ -71,6 +71,9 @@
 #if ANY_THERMISTOR_IS(8) // 100k 0603 SMD Vishay NTCS0603E3104FXT (4.7k pullup)
   #include "thermistortable_8.h"
 #endif
+#if ANY_THERMISTOR_IS(801) // 100k 0805 Murata NCP21WF104J03RA (4.7k pullup)
+  #include "thermistortable_801.h"
+#endif
 #if ANY_THERMISTOR_IS(9) // 100k GE Sensing AL03006-58.2K-97-G1 (4.7k pullup)
   #include "thermistortable_9.h"
 #endif

@@ -110,6 +110,7 @@
 #define TEMP_2_PIN         12   // Analog Input
 #define TEMP_3_PIN         11   // Analog Input
 #define TEMP_4_PIN         10   // Analog Input
+#define TEMP_CHAMBER_PIN    9   // Analog Input
 #define TC1                 4   // Analog Input (Thermo couple on Azteeg X3Pro)
 #define TC2                 5   // Analog Input (Thermo couple on Azteeg X3Pro)
 
